@@ -4,7 +4,7 @@ import random
 import pickle
 import os
 
-# --- CONFIGURACIÓN INICIAL (IDÉNTICA A TU MINIMAX.py) ---
+# --- CONFIGURACIÓN INICIAL  ---
 pygame.init()
 
 ANCHO, ALTO = 1100, 680
@@ -12,7 +12,7 @@ TAMAÑO_TABLERO = 300
 TAMAÑO_CELDA = TAMAÑO_TABLERO // 3
 MARGEN = 40
 
-# Colores (Tus colores originales)
+# Colores 
 BLANCO = (255, 255, 255)
 NEGRO = (0, 0, 0)
 GRIS_FONDO = (240, 240, 245)
@@ -69,7 +69,7 @@ class AgenteQLearning:
         # Ecuación de Bellman (Actualización de la tabla)
         qs[a] += self.alpha * (r + self.gamma * valor_q_futuro - qs[a])
 
-# --- CLASE JUEGO (Mantiene tu lógica de estados) ---
+# --- CLASE JUEGO ---
 class TresEnRaya:
     def __init__(self):
         self.tablero = [0] * 9 # 0: Vacío, 1: Humano (X), 2: IA (O)
@@ -96,7 +96,7 @@ class TresEnRaya:
             return 0
         return None
 
-# --- FUNCIONES DE DIBUJO (MISMAS DE TU MINIMAX.py) ---
+# --- FUNCIONES DE DIBUJO ---
 def dibujar_tablero_principal(juego):
     bx, by = MARGEN, 150
     pygame.draw.rect(pantalla, BLANCO, (bx, by, TAMAÑO_TABLERO, TAMAÑO_TABLERO))
